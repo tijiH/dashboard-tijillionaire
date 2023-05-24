@@ -222,26 +222,13 @@ export default class FirefundValues extends React.Component {
 
     return (
       <div>
-        <h1>Firefund Address Details</h1>
-        <div>
-          <input
-            type="text"
-            defaultValue="0x2b1803f88b660294de17b2c3de919339db938969"
-            onChange={this.handleChange}
-            style={{ width: '350px' }}
-          />
-          <br></br>
-          <button type="submit" onClick={this.handleClick}>
-            Check Address
-          </button>
-        </div>
-        <h4>{this.state.useAddr}</h4>
+        <h2>Firefund</h2>
         <style>
           {
-            'table th{border:1px solid black;} table td{border:1px solid black;}'
+            'table.styled-table{border-collapse:collapse;margin:25px 0;font-size:0.9em;font-family:sans-serif;min-width:400px;box-shadow:0 0 20px rgba(0,0,0,0.15);}table.styled-table thead tr{background-color:#009879;color:#ffffff;text-align:left;}table.styled-table th,table.styled-table td{padding:12px 15px;}table.styled-table tbody tr{border-bottom:1px solid #dddddd;}table.styled-table tbody tr:nth-of-type(even){background-color:#f3f3f3;}table.styled-table tbody tr:last-of-type{border-bottom:2px solid #009879;}table.styled-table tbody tr.active-row{font-weight:bold;color:#009879;}'
           }
         </style>
-        <table>
+        <table class="styled-table">
           <tr>
             <th>Chain</th>
             <th>Current Staked</th>
@@ -250,44 +237,44 @@ export default class FirefundValues extends React.Component {
           </tr>
           <tr>
             <td>Binance</td>
-            <td>{this.state.tStake} $Busd</td>
-            <td>{this.state.tRew} $Busd</td>
-            <td>{this.state.tRefB} $Busd</td>
+            <td>{this.state.tStake} BUSD</td>
+            <td>{this.state.tRew} BUSD</td>
+            <td>{this.state.tRefB} BUSD</td>
           </tr>
           <tr>
             <td>Polygon</td>
             <td>
-              {this.state.tStakeP} $wMatic ({this.state.tStakePUSD} $USD)
+              {this.state.tStakeP} MATIC ({this.state.tStakePUSD} $)
             </td>
             <td>
-              {this.state.tRewP} $wMatic ({this.state.tRewPUSD} $USD)
+              {this.state.tRewP} MATIC ({this.state.tRewPUSD} $)
             </td>
             <td>
-              {this.state.tRefP} $wMatic ({this.state.tRefPUSD} $USD)
+              {this.state.tRefP} MATIC ({this.state.tRefPUSD} $)
             </td>
           </tr>
           <tr>
             <td>Fantom</td>
             <td>
-              {this.state.tStakeF} $wFtm ({this.state.tStakeFUSD} $USD)
+              {this.state.tStakeF} FTM ({this.state.tStakeFUSD} $)
             </td>
             <td>
-              {this.state.tRewF} $wFtm ({this.state.tRewFUSD} $USD)
+              {this.state.tRewF} FTM ({this.state.tRewFUSD} $)
             </td>
             <td>
-              {this.state.tRefF} $wFtm ({this.state.tRefFUSD} $USD)
+              {this.state.tRefF} FTM ({this.state.tRefFUSD} $)
             </td>
           </tr>
           <tr>
             <td>Arbitrum</td>
             <td>
-              {this.state.tStakeA} $wEth ({this.state.tStakeAUSD} $USD)
+              {this.state.tStakeA} ETH ({this.state.tStakeAUSD} $)
             </td>
             <td>
-              {this.state.tRewA} $wEth ({this.state.tRewAUSD} $USD)
+              {this.state.tRewA} ETH ({this.state.tRewAUSD} $)
             </td>
             <td>
-              {this.state.tRefA} $wEth ({this.state.tRefAUSD} $USD)
+              {this.state.tRefA} ETH ({this.state.tRefAUSD} $)
             </td>
           </tr>
           <tr>
@@ -300,7 +287,7 @@ export default class FirefundValues extends React.Component {
                   this.state.tStakeAUSD) *
                   100
               ) / 100}{' '}
-              $USD
+              $
             </th>
             <th>
               {Math.round(
@@ -310,7 +297,7 @@ export default class FirefundValues extends React.Component {
                   this.state.tRewAUSD) *
                   100
               ) / 100}{' '}
-              $USD
+              $
             </th>
             <th>
               {Math.round(
@@ -320,7 +307,7 @@ export default class FirefundValues extends React.Component {
                   this.state.tRefAUSD) *
                   100
               ) / 100}{' '}
-              $USD
+              $
             </th>
           </tr>
         </table>
