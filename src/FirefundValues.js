@@ -3,6 +3,7 @@ import Web3 from 'web3';
 import ABI_JSON from './firefundFinanceABI.json' assert { type: 'json' };
 import ABI_PRICE from './priceABI.json' assert { type: 'json' };
 import { URLParams } from './urlparams.js';
+import { Divider } from 'antd';
 URLParams.readURLData();
 
 export default class FirefundValues extends React.Component {
@@ -222,7 +223,7 @@ export default class FirefundValues extends React.Component {
 
     return (
       <div>
-        <h2>Firefund</h2>
+        <Divider>Firefund</Divider>
         <style>
           {
             'table.styled-table{border-collapse:collapse;margin:25px auto;font-size:0.9em;font-family:sans-serif;min-width:400px;box-shadow:0 0 20px rgba(0,0,0,0.15);}table.styled-table thead tr{background-color:#009879;color:#ffffff;text-align:left;}table.styled-table th,table.styled-table td{padding:15px;}table.styled-table tbody tr{border-bottom:1px solid #dddddd;}table.styled-table tbody tr:nth-of-type(even){background-color:#f3f3f3;}table.styled-table tbody tr:last-of-type{border-bottom:2px solid #009879;}table.styled-table tbody tr.active-row{font-weight:bold;color:#009879;}table.styled-table .underline{text-decoration: underline;}'
@@ -315,12 +316,13 @@ export default class FirefundValues extends React.Component {
         <h2>
           Yield mensuel :{' '}
           {Math.round(
-                (this.state.tStake +
-                  this.state.tStakePUSD +
-                  this.state.tStakeFUSD +
-                  this.state.tStakeAUSD) *
-                  100 * 0.15
-              ) / 100}
+            (this.state.tStake +
+              this.state.tStakePUSD +
+              this.state.tStakeFUSD +
+              this.state.tStakeAUSD) *
+              100 *
+              0.15
+          ) / 100}
         </h2>
         <br></br>
       </div>
