@@ -225,24 +225,24 @@ export default class FirefundValues extends React.Component {
         <h2>Firefund</h2>
         <style>
           {
-            'table.styled-table{border-collapse:collapse;margin:25px 0;font-size:0.9em;font-family:sans-serif;min-width:400px;box-shadow:0 0 20px rgba(0,0,0,0.15);}table.styled-table thead tr{background-color:#009879;color:#ffffff;text-align:left;}table.styled-table th,table.styled-table td{padding:12px 15px;}table.styled-table tbody tr{border-bottom:1px solid #dddddd;}table.styled-table tbody tr:nth-of-type(even){background-color:#f3f3f3;}table.styled-table tbody tr:last-of-type{border-bottom:2px solid #009879;}table.styled-table tbody tr.active-row{font-weight:bold;color:#009879;}'
+            'table.styled-table{border-collapse:collapse;margin:25px auto;font-size:0.9em;font-family:sans-serif;min-width:400px;box-shadow:0 0 20px rgba(0,0,0,0.15);}table.styled-table thead tr{background-color:#009879;color:#ffffff;text-align:left;}table.styled-table th,table.styled-table td{padding:15px;}table.styled-table tbody tr{border-bottom:1px solid #dddddd;}table.styled-table tbody tr:nth-of-type(even){background-color:#f3f3f3;}table.styled-table tbody tr:last-of-type{border-bottom:2px solid #009879;}table.styled-table tbody tr.active-row{font-weight:bold;color:#009879;}table.styled-table .underline{text-decoration: underline;}'
           }
         </style>
         <table class="styled-table">
           <tr>
-            <th>Chain</th>
-            <th>Current Staked</th>
-            <th>Current Rewards</th>
-            <th>Current Ref Bonus</th>
+            <th class="underline">Chain</th>
+            <th class="underline">Current Staked</th>
+            <th class="underline">Current Rewards</th>
+            <th class="underline">Current Ref Bonus</th>
           </tr>
           <tr>
-            <td>Binance</td>
+            <td class="underline">Binance</td>
             <td>{this.state.tStake} BUSD</td>
             <td>{this.state.tRew} BUSD</td>
             <td>{this.state.tRefB} BUSD</td>
           </tr>
           <tr>
-            <td>Polygon</td>
+            <td class="underline">Polygon</td>
             <td>
               {this.state.tStakeP} MATIC ({this.state.tStakePUSD} $)
             </td>
@@ -254,7 +254,7 @@ export default class FirefundValues extends React.Component {
             </td>
           </tr>
           <tr>
-            <td>Fantom</td>
+            <td class="underline">Fantom</td>
             <td>
               {this.state.tStakeF} FTM ({this.state.tStakeFUSD} $)
             </td>
@@ -266,7 +266,7 @@ export default class FirefundValues extends React.Component {
             </td>
           </tr>
           <tr>
-            <td>Arbitrum</td>
+            <td class="underline">Arbitrum</td>
             <td>
               {this.state.tStakeA} ETH ({this.state.tStakeAUSD} $)
             </td>
@@ -278,7 +278,7 @@ export default class FirefundValues extends React.Component {
             </td>
           </tr>
           <tr>
-            <th>TOTAL</th>
+            <th class="underline">TOTAL</th>
             <th>
               {Math.round(
                 (this.state.tStake +
@@ -312,6 +312,16 @@ export default class FirefundValues extends React.Component {
           </tr>
         </table>
         <br></br>
+        <h2>
+          Yield mensuel :{' '}
+          {Math.round(
+                (this.state.tStake +
+                  this.state.tStakePUSD +
+                  this.state.tStakeFUSD +
+                  this.state.tStakeAUSD) *
+                  100 * 0.15
+              ) / 100}
+        </h2>
         <br></br>
       </div>
     );
